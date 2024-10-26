@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formacion acaddemica</title>
+</head>
+<style>
+    body {
+        background-color: rgb(9, 84, 97);
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: left;
+        padding: 16px;
+        margin: auto
+    }
+
+     .datos{
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<body>
+
+    <div class="datos">
+        <h2>Información Académica</h2>
+        <form id="educacion">
+
+            <label for="nivel">Nivel de formación acaddemica:</label>
+            <select id="nivel" name="nivel" required>
+                <option value="">Seleccione su nivel</option>
+                <option value="primaria">Basica primaria</option>
+                <option value="bachiller">Bachiller</option>
+                <option value="pre-grado">Pre-grado</option>
+                <option value="post-grado">Post-grado</option>
+                <option value="ingenieria">Ingenieria</option>
+            </select>
+            <br>
+            <br>
+            <label for="institucion">Institución</label>
+            <input type="text" id="institucion" required>
+            <br>
+            <br>
+            <label for="reconocimiento">Título</label>
+            <input type="text" id="reconocimiento" required>
+            <br>
+            <br>
+            <label for="inicio">Año de inicio</label>
+            <input type="number" id="inicio" min="1950" max="2025" required>
+            <br>
+            <br>
+            <label for="finalizo">Año de finalización</label>
+            <input type="number" id="finalizo" min="1950" max="2025" required>
+
+        </form>
+
+    </div>
+</body>
+</html>

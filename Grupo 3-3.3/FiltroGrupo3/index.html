@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Filtrado de Usuarios</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-container">
+                <img src="./image/logo.png" alt="Logo" class="logo">
+                <nav class="nav-buttons">
+                    <a href="#">Inicio</a>
+                    <a href="#">Sobre Nosotros</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Contacto</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar...">
+                    <i class="fa fa-search"></i> <!-- Puedes usar un icono de búsqueda aquí -->
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Filtrado de Usuarios</h1>
+
+            <div class="filters">
+                <!-- Filtro de modalidad de trabajo -->
+                <select id="filterModalidad" class="filter-select" onchange="applyFilters()">
+                    <option class="filter-select-option" value>Modalidad de trabajo</option>
+                    <option class="filter-select-option" value="diurno">Diurno</option>
+                    <option class="filter-select-option" value="nocturno">Nocturno</option>
+                </select>
+
+                <!-- Filtro de fecha de publicación -->
+                <select id="filterDate" class="filter-select" onchange="applyFilters()">
+                    <option class="filter-select-option" value>Horario</option>
+                    <option class="filter-select-option" value="Diurno_8_h">Diurno 8 horas</option>
+                    <option class="filter-select-option" value="Nocturno_8_h">Nocturno 8 horas</option>
+                    <option class="filter-select-option" value="Diurno_12_horas">Diurno 12 horas</option>
+                    <option class="filter-select-option" value="Nocturno_12_horas">Nocturno 12 horas</option>
+                </select>
+
+                <!-- Filtro de nivel de experiencia -->
+                <select id="filterExperience" class="filter-select" onchange="applyFilters()">
+                    <option class="filter-select-option" value> <div class="open-arrow"></div>Nivel de experiencia</option>
+                    <option class="filter-select-option" value="sin_experiencia">Sin experiencia</option>
+                    <option class="filter-select-option" value="practicas">Prácticas</option>
+                    <option class="filter-select-option" value="intermedio">Intermedio</option>
+                    <option class="filter-select-option" value="director">Director</option>
+                    <option class="filter-select-option" value="ejecutivo">Ejecutivo</option>
+                </select>
+
+                <!-- Filtro de empresa -->
+                <select id="filterCompany" class="filter-select" onchange="applyFilters()">
+                    <option class="filter-select-option" value>Localización</option>
+                    <option class="filter-select-option" value="magneto">Cundinamarca</option>
+                    <option class="filter-select-option" value="activos_colombia">Valle del Cauca</option>
+                    <option class="filter-select-option" value="tolima">Tolima</option>
+                    <option class="filter-select-option" value="gi_group">Caribe</option>
+                    <option class="filter-select-option" value="microsoft">Microsoft</option>
+                </select>
+
+                <!-- Filtro de búsqueda por nombre -->
+                <input type="text" id="filterInput" placeholder="Buscar por nombre..." onkeyup="applyFilters()">
+            </div>
+
+            <div>
+                <!-- Texto que muestra el valor del salario. Se actualizará con JavaScript -->
+                <p class="valor">SALARIO: <span id="salario1">0</span></p>
+
+                <!-- Slider para seleccionar el salario. oninput llama a la función JavaScript cada vez que se cambia el valor -->
+                <input type="range" min="1350000" max="20000000" value="0" id="salarySlider" oninput="updateSalary(this.value)">
+            </div>
+
+            <ul id="userList">
+                <li data-modalidad="diurno" data-experiencia="sin_experiencia" data-localizacion="magneto" data-salario="1000000">
+                    <span class="nombre">User 1</span>
+                    <span class="company">Company 1</span>
+                </li>
+                <li data-modalidad="nocturno" data-experiencia="practicas" data-localizacion="activos_colombia" data-salario="2000000">
+                    <span class="nombre">User 2</span>
+                    <span class="company">Company 2</span>
+                </li>
+                <li data-modalidad="diurno" data-experiencia="intermedio" data-localizacion="tolima" data-salario="3000000">
+                    <span class="nombre">User 3</span>
+                    <span class="company">Company 3</span>
+                </li>
+                <li data-modalidad="nocturno" data-experiencia="director" data-localizacion="gi_group" data-salario="4000000">
+                    <span class="nombre">User 4</span>
+                    <span class="company">Company 4</span>
+                </li>
+                <li data-modalidad="diurno" data-experiencia="ejecutivo" data-localizacion="microsoft" data-salario="5000000">
+                    <span class="nombre">User 5</span>
+                    <span class="company">Company 5</span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

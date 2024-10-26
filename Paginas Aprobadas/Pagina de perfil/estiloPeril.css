@@ -1,0 +1,150 @@
+/*Limpiar pag*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+    height: 100%;
+}
+/*Lineas de información*/
+#linea1{
+    display: flex;
+}
+#linea2{
+    display: flex;
+}
+#linea3{
+    display: flex;
+}
+/* base del perfil*/
+header {
+    background-color: rgb(44, 5, 34);
+    color: white;
+    display: flex;
+    margin: 2%;
+    padding: 1%;
+    text-align: left;
+}
+/*ajustar espacio del perfil*/
+#BannerPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width : 125vh;
+    
+}
+/*alinear perfil*/
+#DatosPrin{
+    max-width: 50%;
+    text-align: center;
+}
+/*ajustar recuadro de experencias*/
+#Experiencias{
+    width: 30%;
+    height: 40%;
+    margin: 2%;
+    padding: 0%;
+    border-radius: 1%;
+    border: 2px solid rgb(44, 5, 34);
+}
+/*centrar texto de experiencias*/
+#ExperienciasL{
+    background-color: rgb(44, 5, 34);
+    text-align: center;
+    color: white;
+}
+/*ajustar el texto de experiencias dentro*/
+#contenidoExp{
+    text-align: left;
+    margin: 2%;
+}
+
+/*ajustar tamañano de la imagen del perfil*/
+#BannerPerfil img{
+    max-width: 30%;
+    height: 1%;
+    
+}
+/*ajustar recuadro de experencias*/
+#Perfil{
+    width: 80%;
+    height: 40%;
+    margin: 2%;
+    padding: 0%;
+    border-radius: 1%;
+    border: 2px solid rgb(44, 5, 34);
+}
+/*centrar texto de perfil*/
+#PerfilL{
+    background-color: rgb(44, 5, 34);
+    text-align: center;
+    color: white;
+}
+/*ajustar el texto de perfil dentro*/
+#contenidoPer{
+    text-align: left;
+    margin: 2%;
+}
+/*ajustar recuadro de contactos*/
+#contactos{
+    width: 30%;
+    height: 40%;
+    margin: 2%;
+    padding: 0%;
+    border-radius: 1%;
+    border: 2px solid rgb(44, 5, 34);
+}
+/*centrar texto de contactos*/
+#contactosL{
+    background-color: rgb(44, 5, 34);
+    text-align: center;
+    color: white;
+}
+/*ajustar el texto de contactos dentro*/
+#contenidoCon{
+    text-align: left;
+    margin: 2%;
+}
+/*ajustar recuadro de formacion academica*/
+#formacion{
+    width: 80%;
+    height: 40%;
+    margin: 2%;
+    padding: 0%;
+    border-radius: 1%;
+    border: 2px solid rgb(44, 5, 34);
+}
+/*centrar texto de formacion academica*/
+#formacionL{
+    background-color: rgb(44, 5, 34);
+    text-align: center;
+    color: white;
+}
+/*ajustar el texto de formacion academica dentro*/
+#contenidoFor{
+    text-align: left;
+    margin: 2%;
+}
+/*ajustar recuadro de sobre mi */
+#sobreMi{
+    width: 100%;
+    height: 40%;
+    margin: 2%;
+    padding: 0%;
+    border-radius: 1%;
+    border: 2px solid rgb(44, 5, 34);
+}
+/*centrar texto de Sobre mi */
+#sobreL{
+    background-color: rgb(44, 5, 34);
+    text-align: center;
+    color: white;
+}
+/*ajustar el texto de sobre mi  dentro*/
+#contenidoSob{
+    text-align: left;
+    margin: 2%;
+}

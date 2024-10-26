@@ -1,0 +1,190 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e2a38;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    padding-top: 10px;
+    height: 70px;
+   
+}
+
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.nav-buttons a:hover {
+    color: #007bff;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 250px;
+    font-size: 16px;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search-container i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-size: 16px;
+}
+
+#filter-input {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.filter-select-option{
+    text-align:left;
+}
+
+.filter-select:hover {
+    border-color: #008000;
+    color: #008000;
+}
+
+.filter-select button.active {
+    background-color: #008000; 
+    color: white; 
+    border-color: #008000; /* Cambiar el color del borde al verde */
+}
+
+.filter-select button:hover {
+    background-color: #008000; /* Color verde al pasar el mouse */
+    color: white; /* Cambiar el color del texto al pasar el mouse */
+}
+
+.filter-select button:focus {
+    outline: none;
+}
+
+#filterInput {
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    width: 250px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Efecto de enfoque en la barra de búsqueda */
+#filterInput:focus {
+    outline: none;
+    background-color: #1e2a38;
+    color: white;
+    border-color: #1e2a38;
+}
+
+
+.container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+
+
+.filter-select {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Circular */
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align-last: center;
+    justify-content: left;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    appearance: none; /* Para quitar las flechas predefinidas de los navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.filter-select:focus, .filter-select.active {
+    background-color: #008000; /* Verde */
+    color: white;
+    border-color: #008000;
+}
+
+.filter-select option:checked {
+    background-color: #008000;
+    color: white;
+}
+
+
+
+.filter-select:last-child {
+    margin-right: 0;
+}
+
+#userList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#userList li {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nombre {
+    font-weight: bold;
+}
+
+.valor {
+    font-size: 18px;
+    margin: 20px 0;
+}
