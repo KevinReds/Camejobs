@@ -107,17 +107,29 @@
         <div class="profile-info">
             {% if user.is_authenticated %}
                 {% if request.user.persona and request.user.persona.foto_perfil %}
-                    <img src="{{ request.user.persona.foto_perfil.url }}" alt="Foto de {{ request.user.persona.nombre_completo }}">
+                    <img style="border-radius: 50%;" src="{{ request.user.persona.foto_perfil.url }}" alt="Foto de {{ request.user.persona.nombre_completo }}">
                 {% elif request.user.empresa and request.user.empresa.logo %}
-                    <img src="{{ request.user.empresa.logo.url }}" alt="Logo de {{ request.userempresa.razon_social }}">
+                    <img style="border-radius: 50%;" src="{{ request.user.empresa.logo.url }}" alt="Logo de {{ request.userempresa.razon_social }}">
                 {% else %}
                     <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto por defecto">
                 {% endif %}
                 {% else %}
                     <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto por defecto">
             {% endif %}
-            <p>Usuario</p>
-            <p>usuario@example.com</p>
+            {% if user.is_authenticated %}
+                {% if request.user.persona and request.user.persona.usuario %}
+                    <p>{{ persona.usuario }}</p>
+                {% elif request.user.empresa and request.user.empresa.usuario %}
+                    <p>{{ empresa.usuario }}</p>
+                {% endif %}
+            {% endif %}
+            {% if user.is_authenticated %}
+                {% if request.user.persona and request.user.persona.email %}
+                    <p>{{ persona.email }}</p>
+                {% elif request.user.empresa and request.user.empresa.email %}
+                    <p>{{ empresa.email }}</p>
+                {% endif %}
+            {% endif %}
         </div>
         <ul>
             <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
