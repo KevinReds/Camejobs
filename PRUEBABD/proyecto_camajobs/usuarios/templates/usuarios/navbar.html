@@ -109,6 +109,13 @@
             <li><a href="{% url 'pagina_perfiles' %}">Perfiles</a></li>
             <li><a href="{% url 'perfiles_empresas' %}">Empresas</a></li>
             <li><a href="#">Postulaciones</a></li>
+            {% if perfil_persona %}
+                <li><a href="{% url 'tickets:listar_tickets' %}">Tickets</a></li>
+            {% endif %}
+
+            {% if perfil_empresa %}
+                <li><a href="{% url 'tickets:listar_tickets' %}">Tickets</a></li>
+            {% endif %}
             <li><a href="{% url 'login' %}">Cerrar sesión</a></li>
         </ul>
         <div class="profile-info">
