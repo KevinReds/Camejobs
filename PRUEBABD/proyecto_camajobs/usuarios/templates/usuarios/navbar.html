@@ -108,7 +108,24 @@
             <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
             <li><a href="{% url 'pagina_perfiles' %}">Perfiles</a></li>
             <li><a href="{% url 'perfiles_empresas' %}">Empresas</a></li>
-            <li><a href="#">Postulaciones</a></li>
+            <li><a href="{% url 'postulaciones' %}">Postulaciones</a></li>
+
+            {% if perfil_persona %}
+                <li><a href="{% url 'perfil_persona' persona.id%}">Tu Perfil</a></li>
+            {% endif %}
+
+            {% if perfil_empresa %}
+                <li><a href="{% url 'perfil_empresa' %}">Tu Empresa</a></li>
+            {% endif %}
+
+            {% if perfil_empresa %}
+                <li><a href="{% url 'modificar_empresa' %}">Modificar empresa</a></li>
+            {% endif %}
+
+            {% if perfil_persona %}
+                <li><a href="{% url 'modificar_perfil' %}">Modificar perfil</a></li>
+            {% endif %}
+
             {% if perfil_persona %}
                 <li><a href="{% url 'tickets:listar_tickets' %}">Tickets</a></li>
             {% endif %}
