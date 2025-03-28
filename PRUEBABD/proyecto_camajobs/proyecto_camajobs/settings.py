@@ -142,9 +142,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Ruta donde DJango buscará archivos estaticos (img, js, css, etc)
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "usuarios", "static")]
 
 # Media files (uploaded by users)
 MEDIA_URL = '/media/'
