@@ -4,46 +4,116 @@
     <meta charset="UTF-8">
     <title>Agregar Formación - CameJobs</title>
     <style>
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: white;
+            width: 600px; /* Tamaño fijo */
+            max-width: 90%; /* Se adapta sin ser muy pequeño */
+            margin-top:100px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
         .formulario {
             border: 1px solid #ddd;
-            padding: 15px;
+            padding: 30px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 20px auto;
+            border-radius: 8px;
+            background: #fafafa;
         }
         .form-group {
             margin-bottom: 15px;
         }
         label {
+            font-weight: bold;
+            color: #555;
             display: block;
             margin-bottom: 5px;
         }
-        input, textarea, select {
+        select, textarea, input {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            box-sizing: border-box
+        }
+        input:focus, textarea:focus, select:focus {
+            border: 2px solid;
+            border-color: #0c1e2c;
+            outline: none;
+        }
+        .btn-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centra los botones horizontalmente */
+            align-items: center; /* Alinea los botones verticalmente */
+            gap: 10px; /* Espaciado uniforme entre botones */
+        }
+        button[type="submit"] {
+            display: block;
+            background-color: #0c1e2c;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover, .btn-enviar:hover {
+            background-color: #098e68c2;
         }
         .btn-enviar {
-            background-color: #4CAF50;
+            background-color: #0c1e2c;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        body.dark-mode{
+            background-color:#0c1e2c;
+        }
+        .dark-mode .container, .dark-mode .formulario{
+            background:#0072a3;
+        }
+        .dark-mode label, .dark-mode h1{
+            color:#fff;
         }
     </style>
 </head>
 <body>
-    <h1>Agregar Formación Académica</h1>
-    <div class="formulario">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn-enviar">Guardar</button>
-        </form>
+    {% include 'usuarios/navbar.html' %}
+    <div class="container">
+        <div class="formulario">
+        <h1>Agregar Formación Académica</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn-form">
+                    <button type="submit" class="btn-enviar">Guardar</button>
+                    <a href="{% url 'perfil_persona' persona.id %}" class="btn-enviar">Volver al Perfil</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <a href="{% url 'perfil_persona' persona.id %}">Volver al Perfil</a>
 </body>
 </html>
