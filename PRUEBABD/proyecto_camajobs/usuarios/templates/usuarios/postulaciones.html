@@ -161,9 +161,7 @@
             {% csrf_token %}
         </form>
 
-        <!-- Enlace para cerrar sesión -->
-        <br><br>
-        <a href="{% url 'login' %}" onclick="confirmarCerrarSesion();">Cerrar Sesión</a>
+       
     </div>
 
     {% include 'usuarios/footer.html' %} 

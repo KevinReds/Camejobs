@@ -65,7 +65,15 @@
                                 <a href="{% url 'modificar_perfil' %}">Modificar perfil</a>
                             {% endif %}
 
-                            <a class="btn_tickets" href="#">Tickets</a>
+                            {% if perfil_persona %}
+                                <a href="{% url 'tickets:listar_tickets' %}">Tickets</a>
+                            {% endif %}
+
+                            {% if perfil_empresa %}
+                                <a href="{% url 'tickets:listar_tickets' %}">Tickets</a>
+                            {% endif %}
+
+                            
 
                             <form id="logout-form" action="{% url 'logout' %}" method="post">
 
