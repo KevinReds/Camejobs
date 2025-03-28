@@ -44,7 +44,7 @@
                             {% elif request.user.empresa and empresa.logo %}
                                 <img src="{{ request.user.empresa.logo.url }}" alt="Logo de {{ request.user.empresa.razon_social }}">
                             {% else %}
-                                <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto por defecto">
+                                <a href="{% url 'login' %}" class="login-button">Iniciar Sesión</a>
                             {% endif %}
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu">
@@ -85,10 +85,8 @@
                         </div>
                     </div>
                 {% else %}
-                    <div class="profile-menu">
-                        <div class="profile" id="profile-icon">
-                            <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto por defecto">
-                        </div>
+                    <div class="nav-links">
+                        <a href="{% url 'login' %}" class="login-button">Iniciar Sesión</a>
                     </div>    
                 {% endif %}
 
@@ -132,6 +130,10 @@
             {% endif %}
         </div>
         <ul>
+            <li><a href="{% url 'login' %}" class="login-button">Iniciar Sesión</a></li>
+            
+            <hr style="border: 1px solid #fff; width: 80%; margin: 10px auto;">
+
             <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
             <li><a href="{% url 'pagina_perfiles' %}">Perfiles</a></li>
             <li><a href="{% url 'perfiles_empresas' %}">Empresas</a></li>
