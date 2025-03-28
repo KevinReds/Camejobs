@@ -75,9 +75,9 @@
 
                             
 
-                            <form id="logout-form" action="{% url 'logout' %}" method="post">
+                            <form action="{% url 'logout' %}" method="post">
 
-                            <form id="logout-form" action="{% url 'logout' %}" method="post">
+                            <form action="{% url 'logout' %}" method="post">
 
                                 {% csrf_token %}
                                 <button type="submit" class="logout-button-link">Cerrar sesión</button>
@@ -168,7 +168,7 @@
             {% endif %}
 
             {% if user.is_authenticated %}
-                <a class="logout-button-link" onclick="document.getElementById('logout-form').submit(); return false;">
+                <a style="color: white; "class="logout-button-link" onclick="document.getElementById('logout-form').submit(); return false;">
                     Cerrar sesión
                 </a>
                 <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">

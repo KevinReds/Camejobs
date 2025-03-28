@@ -286,16 +286,6 @@ input:checked+.slider:before {
   overflow-y: auto;
 }
 
-.logout-button-link {
-  color: white;  /* Color de letra normal */
-  text-decoration: none; /* Para quitar el subrayado */
-  transition: color 0.3s ease-in-out; /* Animación suave */
-}
-
-.logout-button-link:hover {
-  color: #0c1e2c; /* Color cuando pasas el mouse */
-}
-
 .sidebar.active {
   right: 0;
   /* Cambiado a la derecha */
