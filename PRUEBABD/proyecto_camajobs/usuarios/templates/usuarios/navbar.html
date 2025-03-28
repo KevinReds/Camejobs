@@ -130,8 +130,10 @@
             {% endif %}
         </div>
         <ul>
-            <li><a href="{% url 'login' %}" class="login-button">Iniciar Sesión</a></li>
-            
+            {% if not user.is_authenticated %}
+                <li><a href="{% url 'login' %}" class="login-button">Iniciar Sesión</a></li>
+            {% endif %}
+
             <hr style="border: 1px solid #fff; width: 80%; margin: 10px auto;">
 
             <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
@@ -164,7 +166,15 @@
             {% if perfil_empresa %}
                 <li><a href="{% url 'tickets:listar_tickets' %}">Tickets</a></li>
             {% endif %}
-            <li><a href="{% url 'login' %}">Cerrar sesión</a></li>
+
+            {% if user.is_authenticated %}
+                <a class="logout-button-link" onclick="document.getElementById('logout-form').submit(); return false;">
+                    Cerrar sesión
+                </a>
+                <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                    {% csrf_token %}
+                </form>
+            {% endif %}
         </ul>
         
     </div>
