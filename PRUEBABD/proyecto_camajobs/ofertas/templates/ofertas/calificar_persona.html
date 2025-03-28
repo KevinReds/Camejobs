@@ -12,9 +12,8 @@
 </head>
 
 <body>
-
-    <h1>Calificar a {{ persona.nombre_completo }}</h1>
     <form method="post" class="formulario">
+        <h1>Calificar a {{ persona.nombre_completo }}</h1>
         {% csrf_token %}
         <div class="form-group">
             {{ form.as_p }}
