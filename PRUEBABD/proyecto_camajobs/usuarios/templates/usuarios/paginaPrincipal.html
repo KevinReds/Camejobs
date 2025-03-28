@@ -62,11 +62,23 @@
         <div class="contact-content">
             <h2>¿Encuentras lo que buscas?</h2>
             <p>¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para apoyarte en cada paso de tu búsqueda de empleo.</p>
-            <button>Contáctanos</button>
+            
+            <a href="#modal-contacto" class="open-modal"><button>Contáctanos</button></a>
         </div>
     </section>
+    <div id="modal-contacto" class="modal">
+        <div class="modal-content">
+            <a href="#" class="cerrar">X</a>
+            <div class="contactar">
+                <h3>Déjanos tu petición a través de:</h3><b>Nuestro Correo Electrónico:</b>
+                <p>camejobs2025@gmail.com</p><br>
+                <b>O para atención directa:</b>
+                <p>comunícate a la línea 1234567890.</p>
+            </div>
+        </div>
+    </div>
 
-    {% include 'usuarios/footer.html' %}     
+    {% include 'usuarios/footer.html' %}
 
 <script src="{% static 'js/darkmode.js' %}"></script>
 </body>
