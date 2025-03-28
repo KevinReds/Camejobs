@@ -157,11 +157,19 @@ def perfil_persona(request, persona_id):
     experiencias = ExperienciaLaboral.objects.filter(persona=persona)
     tickets = Ticket.objects.filter(usuario=request.user)
 
+    personas_calificadas = Persona.objects.filter(
+        calificaciones_recibidas__persona=persona
+    ).annotate(
+        promedio_calificaciones=Avg('calificaciones_recibidas__puntuacion'),
+        cantidad_calificaciones=Count('calificaciones_recibidas')
+    ).distinct()
+
     return render(request, 'usuarios/perfil_persona.html', {
         'persona': persona,
         'formaciones': formaciones,
         'experiencias': experiencias,
         'tickets': tickets,
+        'personas_calificadas': personas_calificadas,
     })
 
 @login_required
@@ -189,9 +197,17 @@ def perfil_empresa(request, empresa_id=None):
 
     tickets = Ticket.objects.filter(usuario=request.user)
 
+    empresas_calificadas = Empresa.objects.filter(
+        calificaciones_recibidas__empresa=empresa
+    ).annotate(
+        promedio_calificaciones=Avg('calificaciones_recibidas__puntuacion'),
+        cantidad_calificaciones=Count('calificaciones_recibidas')
+    ).distinct()
+
     return render(request, 'usuarios/perfil_empresa.html', {
         'empresa': empresa,
         'tickets': tickets,
+        'empresas_calificadas': empresas_calificadas,
     })
 
 @login_required

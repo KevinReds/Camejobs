@@ -74,6 +74,22 @@ hr {
     margin: 15px 0;
 }
 
+.stars {
+    align-items: center;
+    gap: 5px;
+}
+
+.star-icon {
+    width: 24px;
+    height: 24px;
+    fill: gold;
+}
+
+.star-icon.empty {
+    fill: lightgray;
+}
+
+
 @media screen and (max-width: 768px) {
     .perfil-container {
         flex-direction: column; 
