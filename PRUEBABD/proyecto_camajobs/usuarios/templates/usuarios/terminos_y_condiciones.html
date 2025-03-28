@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Camejobs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/terminos_y_condiciones.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
+</head>
+<body>
+
+    {% include 'usuarios/navbar.html' %}
+
+    <section class="terms-conditions">
+        <h1>Términos y Condiciones</h1>
+        <p class="intro-text">Estos son los términos y condiciones para el uso de nuestra plataforma CameJobs. Al acceder a esta página, acepta los siguientes términos.</p>
+        
+        <div class="terms-cards">
+            <!-- Tarjeta 1 -->
+            <div class="terms-card active">
+                <div class="terms-card-header">
+                    <h2>1. Aceptación de los términos</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <p>Al registrar una cuenta o usar CameJobs, usted acepta:</p>
+                    <ul>
+                        <li>Estos Términos y Condiciones completos</li>
+                        <li>Nuestra Política de Privacidad</li>
+                        <li>Todas las políticas complementarias</li>
+                        <li>Cumplir con las leyes colombianas aplicables</li>
+                    </ul>
+                    <p>Si no está de acuerdo, debe dejar de usar la plataforma inmediatamente.</p>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 2 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>2. Registro y cuentas</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <ul>
+                        <li><strong>Información verídica:</strong> Todos los datos de registro deben ser exactos y actualizados</li>
+                        <li><strong>Responsabilidad:</strong> Usted es responsable de:
+                            <ul>
+                                <li>Mantener sus credenciales seguras</li>
+                                <li>Todas las actividades en su cuenta</li>
+                                <li>Notificar uso no autorizado</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tipos de cuenta:</strong> Distinción clara entre cuentas de empresas y trabajadores</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 3 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>3. Uso adecuado</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <p>Prohibiciones específicas incluyen:</p>
+                    <ul>
+                        <li>Publicar contenido falso o engañoso</li>
+                        <li>Violar derechos de propiedad intelectual</li>
+                        <li>Acoso, discriminación o daño a otros usuarios</li>
+                        <li>Actividades ilegales o fraudulentas</li>
+                        <li>Interferir con el funcionamiento de la plataforma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>4. Perfiles y contenido</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <ul>
+                        <li><strong>Trabajadores:</strong> Garantizan veracidad de formación y experiencia</li>
+                        <li><strong>Empresas:</strong> Garantizan exactitud de ofertas laborales</li>
+                        <li><strong>Contenido:</strong> CameJobs no verifica información de usuarios</li>
+                        <li><strong>Derechos:</strong> Usted conserva sus derechos sobre el contenido que publica</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>5. Sistema de calificaciones</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <ul>
+                        <li>Calificaciones deben basarse en experiencias reales</li>
+                        <li>Prohibido usar para extorsión o competencia desleal</li>
+                        <li>Ambas partes pueden calificar (empresas a trabajadores y viceversa)</li>
+                        <li>CameJobs puede eliminar calificaciones fraudulentas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>6. Responsabilidades</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <p>CameJobs actúa como intermediario y no es responsable de:</p>
+                    <ul>
+                        <li>Interacciones entre usuarios</li>
+                        <li>Resultados de procesos de selección</li>
+                        <li>Veracidad del contenido publicado</li>
+                        <li>Daños derivados del uso de la plataforma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 7 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>7. Modificaciones</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <ul>
+                        <li>CameJobs puede modificar estos términos cuando sea necesario</li>
+                        <li>Los cambios serán publicados en esta sección</li>
+                        <li>El uso continuado significa aceptación de los cambios</li>
+                        <li>Notificaremos cambios importantes por email</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tarjeta 8 -->
+            <div class="terms-card">
+                <div class="terms-card-header">
+                    <h2>8. Terminación</h2>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="terms-card-content">
+                    <ul>
+                        <li>CameJobs puede suspender cuentas que violen estos términos</li>
+                        <li>Usted puede cerrar su cuenta cuando lo desee</li>
+                        <li>Datos pueden ser conservados según requerimientos legales</li>
+                        <li>Prohibido crear nuevas cuentas después de suspensión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'usuarios/footer.html' %}
+
+<script src="{% static 'js/darkmode.js' %}"></script>
+<script src="{% static 'js/terminos_y_condiciones.js' %}"></script>
+</body>
+</html>

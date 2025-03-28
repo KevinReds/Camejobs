@@ -47,6 +47,9 @@ urlpatterns = [
     # Ruta para FAQS
     path('faqs_pagina/', views.faqs_pagina, name='faqs_pagina'),
 
+    # Ruta para terminos y condiciones
+    path('terminos_y_condiciones/', views.terminos_y_condiciones, name='terminos_y_condiciones'),
+
     # Ruta para pagina Quienes somos
     path('quienes_somos/', views.quienes_somos, name='quienes_somos'),
 

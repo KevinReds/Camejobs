@@ -344,6 +344,10 @@ def calificar_empresa(request, empresa_id):
 def faqs_pagina(request):
     return render(request, 'usuarios/faqs_pagina.html')
 
+#Terminos y condiciones
+def terminos_y_condiciones(request):
+    return render(request, 'usuarios/terminos_y_condiciones.html')
+
 #Quienes somos
 def quienes_somos(request):
     return render(request, 'usuarios/quienes_somos.html')
