@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Perfiles{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/pag_perfiles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_perfiles.css' %}">
     <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 
@@ -43,13 +43,10 @@
                     <br>
                 </aside>
                 <!-- Sección derecha: Listado de personas -->
-
+ 
                 <section class="personas">
                     {% for persona in personas %}
-                    <div class="persona-card">
-                        <div class="persona" persona-ubicacion="{{ persona.ubicacion }}"
-
-                            <h2 class="persona-nombre">{{ persona.nombre_completo }}</h2>
+                        <div class="persona" persona-ubicacion="{{ persona.ubicacion }}">
 
                             {% if persona.foto_perfil %}
                             <img src="{{ persona.foto_perfil.url }}" alt="{{ persona.nombre_completo }}" class="persona-foto">
@@ -57,18 +54,22 @@
                             <img src="{% static 'img/default_profile.png' %}"alt="Sin foto" class="persona-foto">
                             {% endif %}
 
+                            <h2 class="persona-nombre">{{ persona.nombre_completo }}</h2>
+
+                            
+
                             <div class="persona-info">
                                 <p class="persona-profesion">🧑‍💼 {{ persona.profesion }}</p>
-                                <p class="persona-ubicacion">📍 {{ persona.ubicacion}}</p>
+                                <p class="persona-ubicacion">📍 {{ persona.ubicacion }}</p>
                             </div>
 
-                            <a class="perfil_link" href="{% url 'perfil_persona' persona.id %}" class="persona-card">Perfil</a>                    </div>
-                    </div>
+                            <a class="perfil_link" href="{% url 'perfil_persona' persona.id %}"></a>
+                        </div>
                     {% empty %}
                     <p class="sin_personas">No hay personas disponibles.</p>
                     {% endfor %}
                 </section>
-
+            </div>
         </main>
     </div>
 
@@ -76,5 +77,8 @@
     {% include 'usuarios/footer.html' %}
 
 </body>
+<script src="{% static 'js/perfiles.js' %}"></script>
+<script src="{% static 'js/filtros.js' %}"></script>
+<script src="{% static 'js/darkmode.js' %}"> </script>
 
 </html>

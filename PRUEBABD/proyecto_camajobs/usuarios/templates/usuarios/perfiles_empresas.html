@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Empresas{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/pag_perfiles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_empresas.css' %}">
     <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 
@@ -46,10 +46,7 @@
 
                 <section class="empresas">
                     {% for empresa in empresas %}
-                    <div class="persona-card">
-                        <div class="persona" persona-ubicacion="{{ empresa.ubicacion }}"
-
-                            <h2 class="persona-nombre">{{ empresa.razon_social }}</h2>
+                        <div class="persona" persona-ubicacion="{{ empresa.ubicacion }}">
 
                             {% if empresa.logo %}
                             <img src="{{ empresa.logo.url }}" alt="{{ empresa.usuario }}" class="persona-foto">
@@ -57,13 +54,15 @@
                             <img src="{% static 'img/default_profile.png' %}"alt="Sin foto" class="persona-foto">
                             {% endif %}
 
+                            <h2 class="persona-nombre">{{ empresa.razon_social }}</h2>
+
                             <div class="persona-info">
                                 <p class="persona-profesion">🧑 {{ empresa.eslogan }}</p>
                                 <p class="persona-ubicacion">📍 {{ empresa.ubicacion}}</p>
                             </div>
 
-                            <a class="perfil_link" href="{% url 'perfil_empresa' empresa.id %}" class="persona-card">Perfil</a>                    </div>
-                    </div>
+                            <a class="perfil_link" href="{% url 'perfil_empresa' empresa.id %}"></a>
+                        </div>
                     {% empty %}
                     <p class="sin_personas">No hay empresas disponibles.</p>
                     {% endfor %}
@@ -76,5 +75,9 @@
     {% include 'usuarios/footer.html' %}
 
 </body>
+
+<script src="{% static 'js/empresas.js' %}"></script>
+<script src="{% static 'js/filtros.js' %}"></script>
+<script src="{% static 'js/darkmode.js' %}"> </script>
 
 </html>
