@@ -23,7 +23,6 @@
 /* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
   margin: 0;
   padding-top: var(--navbar-height); /* Añadir padding para compensar el navbar fijo */
 }

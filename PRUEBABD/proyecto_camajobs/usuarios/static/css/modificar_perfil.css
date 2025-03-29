@@ -1,6 +1,29 @@
+:root {
+    --background-primary: #0c1e2c;
+    --background-secondary: #0072a3;
+    --text-primary: #fff;
+    --text-secondary: #d6d6d6;
+    --accent-primary: #000;
+    --accent-secondary: #04302384;
+    --accent-tertiary: #000;
+    --card-background: #005e45;
+    --footer-background: #087b5a;
+    --footer-below-background: #005e45;
+    --text-herotitle: #000;
+    --about-color: #005e45c9;
+    --svg-color: #005e45c9;
+    --color-2: #098e68c2;
+    --color-3: #09bc8a;
+    --color-4: #0385bd;
+    --color-5: #102b3e
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/reset.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
@@ -49,21 +72,6 @@ select {
     text-align: center;
 }
 
-button[type="submit"] {
-    background-color: #0c1e2c;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #0072a3;
-}
-
 .botones-agregar {
     display: flex;
     justify-content: center;
@@ -83,8 +91,33 @@ button[type="submit"]:hover {
     transition: background-color 0.3s ease;
 }
 
-.btn-agregar:hover {
-    background-color: #0072a3;
+
+button[type="submit"], .btn-agregar{
+    background-color: var(--color-3);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover, .btn-agregar:hover {
+    background-color: var(--color-2);
+}
+
+.dark-mode, .dark-mode .perfil-container h1 {
+    color: var(--text-primary);
+}
+
+.dark-mode .perfil-container {
+    background-color: var(--background-primary);
+}
+
+.dark-mode .perfil-container input, .dark-mode .perfil-container textarea{
+    background-color: var(--color-5);
+    color: var(--text-primary);
 }
 
 @media (max-width: 992px) {

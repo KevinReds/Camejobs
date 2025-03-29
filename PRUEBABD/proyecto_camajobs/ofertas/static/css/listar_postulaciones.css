@@ -16,11 +16,34 @@
     --color-3: #09bc8a;
     --color-4: #0385bd;
     --color-5: #102b3e;
+    --card-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    color: var(--accent-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .postulaciones-container {
+    flex: 1;
     margin-top: 92px;
-    padding: 20px 0 20px 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .postulacion {
@@ -28,6 +51,26 @@
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+    color: #000;
+    box-shadow: var(--card-shadow-light);
+}
+
+[data-theme="dark"] .postulacion {
+    background-color: var(--color-5);
+    border-color: var(--background-secondary);
+    color: #000;
+    box-shadow: var(--card-shadow-dark);
+}
+
+.postulacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .postulacion:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-accion {
@@ -37,26 +80,134 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-accion:hover {
+    transform: scale(1.05);
 }
 
 .btn-aceptar {
-    background-color: var(--color-3)
+    background-color: var(--color-3);
 }
 .btn-aceptar:hover {
-    background-color: var(--color-2)
+    background-color: var(--color-2);
 }
 
 .btn-rechazar {
-    background-color: var(--color-4)
+    background-color: var(--color-4);
 }
 .btn-rechazar:hover {
-    background-color: var(--color-5)
+    background-color: var(--color-5);
 }
 
 .btn-calificar {
     background-color: var(--color-3);
-    /* Color naranja para diferenciar */
 }
 .btn-calificar:hover {
-    background-color: var(--color-2)
+    background-color: var(--color-2);
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .postulaciones-container {
+        padding: 15px;
+        margin-top: 80px;
+    }
+    
+    .postulacion {
+        padding: 10px;
+    }
+    
+    .btn-accion {
+        padding: 8px 15px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .acciones {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .postulaciones-container {
+        padding: 10px;
+    }
+    
+    .postulacion {
+        padding: 8px;
+    }
+    
+    .btn-accion {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+body.dark-mode {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+
+.dark-mode .container header,
+.dark-mode .container main,
+.dark-mode .container footer {
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+}
+
+.dark-mode .container a {
+    color: var(--color-4);
+}
+
+.dark-mode .container button {
+    background-color: var(--color-3);
+    color: var(--text-primary);
+}
+
+.dark-mode .container {
+    background-color: var(--background-primary);
+    border: 1px solid var(--accent-secondary);
+}
+
+.dark-mode .container .card {
+    background-color: var(--card-background);
+    color: #000;
+    border: 1px solid var(--accent-tertiary);
+    box-shadow: var(--card-shadow-dark);
+}
+
+.dark-mode .container .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .container .oferta {
+    background-color: var(--color-5);
+    color: #000;
+    box-shadow: var(--card-shadow-dark);
+}
+
+.dark-mode .container h1, 
+.dark-mode .container h2 {
+    color: var(--text-primary);
+}
+
+.dark-mode .postulacion {
+    background-color: var(--color-5);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow-dark);
 }
