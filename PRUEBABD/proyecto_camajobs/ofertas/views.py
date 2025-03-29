@@ -79,6 +79,9 @@ def calificar_empresa(request, postulacion_id):
             calificacion.persona = persona
             calificacion.empresa = empresa
             calificacion.save()
+            # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+            storage = messages.get_messages(request)
+            storage.used = True 
             messages.success(request, 'Calificación enviada exitosamente.')
             return redirect('perfil_empresa', empresa_id=empresa.id)
     else:
@@ -91,8 +94,12 @@ def calificar_persona(request, postulacion_id):
     postulacion = get_object_or_404(Postulacion, id=postulacion_id, oferta__empresa__usuario=request.user)
     persona = postulacion.trabajador
     empresa = postulacion.oferta.empresa
+    
 
     if postulacion.estado != 'Aprobado':
+        # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+        storage = messages.get_messages(request)
+        storage.used = True 
         messages.error(request, 'Solo puedes calificar a personas con postulaciones aprobadas.')
         return redirect('listar_postulaciones', oferta_id=postulacion.oferta.id)
 
@@ -103,6 +110,9 @@ def calificar_persona(request, postulacion_id):
             calificacion.empresa = empresa
             calificacion.persona = persona
             calificacion.save()
+            # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+            storage = messages.get_messages(request)
+            storage.used = True 
             messages.success(request, 'Calificación enviada exitosamente.')
             return redirect('listar_postulaciones', oferta_id=postulacion.oferta.id)
     else:

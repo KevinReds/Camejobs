@@ -353,6 +353,9 @@ def calificar_persona(request, persona_id):
             calificacion.empresa = empresa
             calificacion.persona = persona
             calificacion.save()
+            # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+            storage = messages.get_messages(request)
+            storage.used = True 
             messages.success(request, 'Calificación enviada exitosamente.')
             return redirect('perfil_persona', persona_id=persona.id)
     else:
@@ -372,6 +375,9 @@ def calificar_empresa(request, empresa_id):
             calificacion.persona = persona
             calificacion.empresa = empresa
             calificacion.save()
+            # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+            storage = messages.get_messages(request)
+            storage.used = True 
             messages.success(request, 'Calificación enviada exitosamente.')
             return redirect('perfil_empresa', empresa_id=empresa.id)
     else:

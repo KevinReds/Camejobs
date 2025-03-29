@@ -1,0 +1,182 @@
+/* Estilos generales */ 
+:root {
+    --background-primary: #0c1e2c;
+    --background-secondary: #0072a3;
+    --text-primary: #fff;
+    --text-secondary: #d6d6d6;
+    --accent-primary: #000;
+    --accent-secondary: #04302384;
+    --accent-tertiary: #000;
+    --card-background: #005e45;
+    --footer-background: #087b5a;
+    --footer-below-background: #005e45;
+    --text-herotitle: #000;
+    --about-color: #005e45c9;
+    --svg-color: #005e45c9;
+    --color-2: #098e68c2;
+    --color-3: #09bc8a;
+    --color-4: #0385bd;
+    --color-5: #102b3e;
+    --navbar-height: 80px;
+    --hover-color: #f5f5f5;
+}
+
+/* Estilos generales */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Título */
+.title {
+    padding-top: var(--navbar-height);
+    text-align: center;
+    font-size: 26px;
+    color: var(--color-5);
+    margin-bottom: 20px;
+}
+
+/* Contenedor del formulario */
+.form-ticket {
+    max-width: 600px;
+    width: 90%;
+    margin: 50px auto;
+    background: #f4f4f4;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    color: var(--text-herotitle);
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-5);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--color-5);
+    border-radius: 10px;
+    transition: border 0.3s;
+    box-sizing: border-box;
+    background: #fff;
+    color: var(--accent-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Efecto al enfocar */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+}
+
+/* Botón de envío */
+.btn-enviar {
+    background-color: var(--color-3);
+    color: var(--text-primary);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: var(--card-background);
+}
+
+/* Enlace de regreso */
+.redireccion {
+    display: block;
+    text-align: center;
+    background-color: var(--color-3);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 10px;
+    width: 200px;
+    color: var(--text-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.redireccion:hover {
+    background-color: var(--card-background);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+
+.dark-mode .form-ticket {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: 1px solid #fff;
+}
+
+.dark-mode .title {
+    color: var(--text-primary);
+}
+
+.dark-mode .form-group label {
+    color: var(--text-primary);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .btn-enviar {
+    background-color: var(--color-3);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-ticket {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .btn-enviar {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

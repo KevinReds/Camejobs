@@ -1,49 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Formación - CamsJobs</title>
-    <style>
-        .formulario {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .btn-enviar {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Camejobs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/editar_formacion.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 <body>
-    <h1>Editar Formación Académica</h1>
-    <div class="formulario">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn-enviar">Guardar</button>
-        </form>
+    {% include 'usuarios/navbar.html' %}
+    
+    <div class="container">
+        <h1 class="title">Editar Formación Académica</h1>
+        <div class="form-ticket">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn-enviar">Guardar</button>
+            </form>
+            <a href="{% url 'perfil_persona' %}" class="redireccion">Volver al Perfil</a>
+        </div>
     </div>
-    <a href="{% url 'perfil_persona' %}">Volver al Perfil</a>
+    
+    {% include 'usuarios/footer.html' %}
 </body>
+<script src="{% static 'js/darkmode.js' %}"></script>
 </html>
