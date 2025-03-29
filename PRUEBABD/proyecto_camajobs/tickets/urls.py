@@ -1,6 +1,9 @@
-from django.urls import path
-from . import views
+# Importación de módulos necesarios de Django
+from django.urls import path  # Para definir patrones de URL
+from . import views  # Importa las vistas definidas en el mismo directorio
 
+# Namespace para las URLs de esta aplicación
+# Permite referenciar estas URLs de forma única en todo el proyecto usando 'tickets:nombre_url'
 app_name = 'tickets'
 
 urlpatterns = [
