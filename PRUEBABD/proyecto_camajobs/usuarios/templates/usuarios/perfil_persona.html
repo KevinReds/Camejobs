@@ -13,6 +13,17 @@
     {% include 'usuarios/navbar.html' %}
 
     <br><br><br><br><br>
+
+    {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% if messages %}{% for message in messages %}{% endfor %}{% endif %}
+            </div>
+        {% endif %}
     
     <!-- Contenedor del perfil -->
     <div class="perfil-container">

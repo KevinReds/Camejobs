@@ -29,6 +29,19 @@
         </form>
     
         <br>
+        
+        {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% if messages %}{% for message in messages %}{% endfor %}{% endif %}
+            </div>
+        {% endif %}
+
+        <br>
 
         <div class="botones-agregar">
         <h2>Formación Académica</h2>

@@ -163,7 +163,7 @@ def perfil_persona(request, persona_id=None):
         
     formaciones = FormacionAcademica.objects.filter(persona=persona)
     experiencias = ExperienciaLaboral.objects.filter(persona=persona)
-    tickets = Ticket.objects.filter(usuario=request.user)
+    tickets = Ticket.objects.filter(usuario=request.user) 
 
     personas_calificadas = Persona.objects.filter(
         calificaciones_recibidas__persona=persona
@@ -189,8 +189,11 @@ def modificar_perfil(request):
         persona_form = PersonaForm(request.POST, request.FILES, instance=persona)
         if persona_form.is_valid():
             persona_form.save()
+            # Limpiamos mensajes antes de agregar uno nuevo
+            storage = messages.get_messages(request)
+            storage.used = True
             messages.success(request, "Perfil actualizado correctamente.")
-            return redirect('usuarios/perfil/persona', persona_id=persona.id)
+            return redirect(request.path)
     else:
         persona_form = PersonaForm(instance=persona)
     return render(request, 'usuarios/modificar_perfil.html', {
@@ -247,8 +250,11 @@ def agregar_formacion(request):
             formacion = form.save(commit=False)
             formacion.persona = persona
             formacion.save()
+            # Limpiamos mensajes antes de agregar uno nuevo
+            storage = messages.get_messages(request)
+            storage.used = True
             messages.success(request, 'Formación académica agregada correctamente.')
-            return redirect('perfil_persona')
+            return redirect('modificar_perfil')
     else:
         form = FormacionAcademicaForm()
 
@@ -261,8 +267,11 @@ def editar_formacion(request, formacion_id):
         form = FormacionAcademicaForm(request.POST, instance=formacion)
         if form.is_valid():
             form.save()
+            # Limpiamos mensajes antes de agregar uno nuevo
+            storage = messages.get_messages(request)
+            storage.used = True
             messages.success(request, 'Formación académica actualizada correctamente.')
-            return redirect('perfil_persona')
+            return redirect('modificar_perfil')
     else:
         form = FormacionAcademicaForm(instance=formacion)
 
@@ -272,8 +281,13 @@ def editar_formacion(request, formacion_id):
 def eliminar_formacion(request, formacion_id):
     formacion = get_object_or_404(FormacionAcademica, id=formacion_id, persona__usuario=request.user)
     formacion.delete()
+    
+    # Limpiamos mensajes antes de agregar uno nuevo
+    storage = messages.get_messages(request)
+    storage.used = True 
+    
     messages.success(request, 'Formación académica eliminada correctamente.')
-    return redirect('perfil_persona')
+    return redirect('modificar_perfil')
 
 # Vistas para la experiencia laboral
 @login_required
@@ -285,8 +299,12 @@ def agregar_experiencia(request):
             experiencia = form.save(commit=False)
             experiencia.persona = persona
             experiencia.save()
+            
+            # Limpiamos mensajes antes de agregar uno nuevo
+            storage = messages.get_messages(request)
+            storage.used = True
             messages.success(request, 'Experiencia laboral agregada correctamente.')
-            return redirect('perfil_persona')
+            return redirect('modificar_perfil')
     else:
         form = ExperienciaLaboralForm()
 
@@ -299,8 +317,12 @@ def editar_experiencia(request, experiencia_id):
         form = ExperienciaLaboralForm(request.POST, instance=experiencia)
         if form.is_valid():
             form.save()
+            
+            # Limpiamos mensajes antes de agregar uno nuevo
+            storage = messages.get_messages(request)
+            storage.used = True
             messages.success(request, 'Experiencia laboral actualizada correctamente.')
-            return redirect('perfil_persona')
+            return redirect('modificar_perfil')
     else:
         form = ExperienciaLaboralForm(instance=experiencia)
 
@@ -310,8 +332,13 @@ def editar_experiencia(request, experiencia_id):
 def eliminar_experiencia(request, experiencia_id):
     experiencia = get_object_or_404(ExperienciaLaboral, id=experiencia_id, persona__usuario=request.user)
     experiencia.delete()
+    
+    # Antes de agregar un nuevo mensaje, limpiamos cualquier mensaje previo
+    storage = messages.get_messages(request)
+    storage.used = True 
+    
     messages.success(request, 'Experiencia laboral eliminada correctamente.')
-    return redirect('perfil_persona')
+    return redirect('modificar_perfil')
 
 # Vistas de calificación
 @login_required
