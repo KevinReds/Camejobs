@@ -32,7 +32,7 @@
             <img src="{% static 'img/44.jpg' %}" alt="Talento">
             <h2>Encuentra el Talento que tu Empresa Necesita</h2>
             <p>Registra tu empresa y accede a un extenso catálogo de perfiles profesionales.</p>
-            <button>Ir a Perfiles</button>
+            <a href="{% url 'pagina_perfiles' %}"><button>Ir a Perfiles</button></a>
         </div>
         <div class="card">
             <img src="{% static 'img/55.jpg' %}" alt="Oportunidades">
@@ -44,7 +44,7 @@
             <img src="{% static 'img/66.jpg' %}" alt="Empresas">
             <h2>Encuentra con Quién Deseas Trabajar</h2>
             <p>Explora empresas y descubre aquellas que se alinean con tus intereses y valores.</p>
-            <button>Ver Empresas</button>
+            <a href="{% url 'perfiles_empresas' %}"><button>Ver Empresas</button></a>
         </div>
     </section>
 

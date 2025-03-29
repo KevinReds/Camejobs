@@ -78,7 +78,7 @@ body {
     border-color: #0c1e2c;
     outline: none
 }
-  
+
 
 
 .filtros button:hover {
@@ -276,12 +276,12 @@ body.dark-mode .persona p {
 
 .persona-profesion,
 .persona-ubicacion {
-  color: #000;
-  flex: 1;
-  text-align: center;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+    color: #000;
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 .persona-foto {
@@ -315,53 +315,53 @@ body.dark-mode .persona p {
     box-shadow: var(--shadow);
 }
 
-.perfil_link{
+.perfil_link {
     width: 100%;
 }
 
-
 @media (min-width:1800px) {
     html {
-      height: 100%;
+        height: 100%;
     }
-    
+
     .perfil-container {
         margin: 45px 50px;
         gap: 50px;
     }
-  
+
     .filtros {
         width: 22%;
         padding: 20px;
         gap: 10px;
     }
-  
+
     .filter-select,
     .input-container input[type=text] {
         padding: 12px;
         font-size: 16px;
     }
-  
+
     .filtros h2 {
         font-size: 18px;
         font-weight: 700;
     }
-  
+
     .empresas {
         width: 78%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 perfiles por fila */
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 perfiles por fila */
         gap: 30px;
     }
-  
+
     .persona-nombre {
         font-size: 22px;
     }
-  
+
     .persona-info {
         font-size: 16px;
     }
-  
+
     .persona-foto {
         max-width: 100px;
         margin-bottom: 25px;
@@ -370,48 +370,49 @@ body.dark-mode .persona p {
     .persona:hover {
         transform: scale(1.05);
     }
-  }
-  
-  @media (min-width:1024px) and (max-width:1799px) {
+}
+
+@media (min-width:1024px) and (max-width:1799px) {
     html {
-      height: 100%;
+        height: 100%;
     }
-  
+
     .perfil-container {
         margin: 45px 30px;
         gap: 30px;
     }
-  
+
     .filtros {
         width: 28%;
         padding: 15px;
         gap: 10px;
     }
-  
+
     .filter-select,
     .input-container input[type=text] {
         padding: 10px;
         font-size: 14px;
     }
-  
+
     .filtros h2 {
         font-size: 16px;
     }
-  
+
     .empresas {
         width: 72%;
-        grid-template-columns: repeat(2, 1fr); /* 2 perfiles por fila */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 perfiles por fila */
         gap: 20px;
     }
-  
+
     .persona-nombre {
         font-size: 18px;
     }
-  
+
     .persona-info {
         font-size: 14px;
     }
-  
+
     .persona-foto {
         max-width: 80px;
         margin-bottom: 20px;
@@ -420,13 +421,14 @@ body.dark-mode .persona p {
     .persona:hover {
         transform: scale(1.05);
     }
-  }
-  
-  @media (max-width:1024px) {
+}
+
+@media (max-width:1024px) {
     .main-content {
-      margin-top: var(--navbar-height); /* Usar la variable del navbar */
+        margin-top: var(--navbar-height);
+        /* Usar la variable del navbar */
     }
-  
+
     .btn-filtros {
         display: block;
         width: 100%;
@@ -441,7 +443,7 @@ body.dark-mode .persona p {
         cursor: pointer;
         margin: 0;
     }
-  
+
     .filtros {
         display: none;
         position: relative;
@@ -459,14 +461,14 @@ body.dark-mode .persona p {
         padding: 0;
         margin: 0;
     }
-  
+
     .filtros.show {
         display: flex;
         max-height: none;
         overflow-y: visible;
         padding: 20px;
     }
-  
+
     .perfil-container {
         margin: 0;
         margin-top: 20px;
@@ -474,10 +476,11 @@ body.dark-mode .persona p {
         flex-direction: column;
         gap: 20px;
     }
-  
+
     .empresas {
         width: 100%;
-        grid-template-columns: 1fr; /* 1 perfil por fila */
+        grid-template-columns: 1fr;
+        /* 1 perfil por fila */
         margin: 0;
         padding: 0;
         gap: 20px;
@@ -486,7 +489,7 @@ body.dark-mode .persona p {
     .persona {
         min-height: 300px;
     }
-    
+
     .persona img {
         max-width: 70px;
         min-width: 70px;
@@ -498,4 +501,5 @@ body.dark-mode .persona p {
         transform: scale(1.025);
     }
 
-  }
+}
+

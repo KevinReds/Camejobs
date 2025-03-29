@@ -366,6 +366,7 @@ html {
   max-height: 80px;
 }
 
+
 /* Media queries específicos para prevenir colapso */
 @media screen and (max-width: 1023px) and (min-width: 900px) {
 
@@ -543,9 +544,4 @@ html {
   .full-text {
     display: inline
   }
-}
-
-.login-btn a{
-  background-color: #005e45;
-  margin: auto;
 }

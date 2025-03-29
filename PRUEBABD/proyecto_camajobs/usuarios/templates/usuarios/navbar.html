@@ -26,7 +26,15 @@
                 <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
                 <li><a href="{% url 'pagina_perfiles' %}">Perfiles</a></li>
                 <li><a href="{% url 'perfiles_empresas' %}">Empresas</a></li>
-                <li><a href="{% url 'postulaciones' %}">Postulaciones</a></li>
+                <li>
+                    
+                    {% if not user.is_authenticated %}
+                    <a href="#modal-iniciarSesion" class="open-modal">Postulaciones</a>
+                    {% else %}
+                    <li><a href="{% url 'postulaciones' %}">Postulaciones</a></li>
+                    {% endif %}
+
+                </li>
             </ul>
 
             <!-- Botón de Dark Mode -->
@@ -139,7 +147,14 @@
             <li><a href="{% url 'pagina_ofertas' %}">Ofertas</a></li>
             <li><a href="{% url 'pagina_perfiles' %}">Perfiles</a></li>
             <li><a href="{% url 'perfiles_empresas' %}">Empresas</a></li>
+
+
+            {% if not user.is_authenticated %}
+            <a href="#modal-iniciarSesion" class="open-modal">ir a empresa</a>
+            {% else %}
             <li><a href="{% url 'postulaciones' %}">Postulaciones</a></li>
+            {% endif %}
+            
             
             <hr style="border: 1px solid #fff; width: 80%; margin: 10px auto;">
 
@@ -180,6 +195,8 @@
     </div>
     {% block content %}
     {% endblock %}
+
+    {% include 'usuarios/modal-iniciarSesion.html' %}
 
     <!-- Resto del contenido de paginaPrincipal.html -->
 

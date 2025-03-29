@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Camejobs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/modal-iniciarSesion.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
+</head>
+
+<body>
+    <div id="modal-iniciarSesion" class="modalIniciarSesion">
+        <div class="modalIniciarSesion-content">
+            <a href="#" class="cerrarModalIniciarSesion">X</a>
+            <div class="contactar">
+                <img src="{% static 'img/Logo camejobs.png' %}" alt="Logo de Camejobs" class="logo">
+                <h3>¡Hola! Para acceder a esta sección, por favor inicia sesión.</h3>
+                <p>Si no tienes una cuenta, puedes registrarte como empresa o persona.</p>
+                <a class="btn_modalIniciarSesion" href="{% url 'inicio' %}">Registrarse</a>
+                <p>¿Ya tienes una cuenta?</p>
+                <a class="btn_modalIniciarSesion" href="{% url 'login' %}">Inicia sesión</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

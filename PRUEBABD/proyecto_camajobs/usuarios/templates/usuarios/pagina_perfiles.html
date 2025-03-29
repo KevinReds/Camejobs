@@ -63,7 +63,15 @@
                                 <p class="persona-ubicacion">📍 {{ persona.ubicacion }}</p>
                             </div>
 
+                            
+
+                            {% if not user.is_authenticated %}
+                            <a href="#modal-iniciarSesion" class="open-modal">ir a perfil</a>
+                            {% else %}
                             <a class="perfil_link" href="{% url 'perfil_persona' persona.id %}"></a>
+                            {% endif %}
+
+
                         </div>
                     {% empty %}
                     <p class="sin_personas">No hay personas disponibles.</p>

@@ -68,7 +68,16 @@
 
                 <section class="ofertas">
                     {% for oferta in ofertas %}
-                    <div class="oferta-card" onclick="abrirModal('modal-{{ oferta.id }}')">
+                    <div class="oferta-card" 
+                    
+                    {% if not user.is_authenticated %}
+                    onclick="window.location.href='#modal-iniciarSesion'"
+                    {% else %}
+                    onclick="abrirModal('modal-{{ oferta.id }}')"
+                    {% endif %}
+                    
+                    
+                    >
                         <div class="oferta" data-empresa="{{ oferta.empresa.razon_social }}"
                             data-ubicacion="{{ oferta.ubicacion }}"
                             data-salario="${{ oferta.salario|floatformat:0 }} (Mensual)"
@@ -150,6 +159,7 @@
     {% include 'usuarios/footer.html' %}
 
     </div>
+
     
     <script src="{% static 'js/oferta.js' %}"></script>
     <script src="{% static 'js/filtro.js' %}"></script>

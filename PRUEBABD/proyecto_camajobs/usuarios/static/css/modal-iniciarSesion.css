@@ -1,0 +1,61 @@
+/* Modal Styles */
+.modalIniciarSesion{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modalIniciarSesion:target {
+    display: flex;
+}
+
+.modalIniciarSesion:target~footer .section-title {
+    pointer-events: none;
+    color: #8d8c8c;
+}
+
+.modalIniciarSesion-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 300px;
+}
+
+.dark-mode .modalIniciarSesion-content {
+    background: #0072a3;
+    color: white;
+}
+
+.cerrarModalIniciarSesion {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.btn_modalIniciarSesion {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #172A3A;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn_modalIniciarSesion:hover {
+    background-color: #2980b9;
+}
