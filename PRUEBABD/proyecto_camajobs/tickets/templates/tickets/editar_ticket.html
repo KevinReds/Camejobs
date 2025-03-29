@@ -1,61 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Ticket - CameJobs</title>
-    <style>
-        .form-ticket {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .btn-enviar {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Camejobs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/editar_ticket.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 <body>
-    <h1>Editar Ticket</h1>
+
+    {% include 'usuarios/navbar.html' %}
     
-    <!-- Enlace para volver a la página de bienvenida -->
-    <a href="{% url 'postulaciones' %}">Volver al Inicio</a>
+    <h1 class="title">Editar Ticket</h1>
+    
+
+    
 
     <div class="form-ticket">
+        <!-- Enlace para volver a la página de bienvenida -->
+        <a class="redireccion" href="{% url 'tickets:listar_tickets' %}">Volver al Inicio</a>
+        
         <form method="post">
             {% csrf_token %}
             
             <div class="form-group">
-                <label for="id_titulo">Título:</label>
+                <label class="titulo" for="id_titulo">Título:</label>
                 {{ form.titulo }}
             </div>
 
             <div class="form-group">
-                <label for="id_tipo">Tipo:</label>
+                <label class="tipo" for="id_tipo">Tipo:</label>
                 {{ form.tipo }}
             </div>
 
             <div class="form-group">
-                <label for="id_descripcion">Descripción:</label>
+                <label class="descripcion" for="id_descripcion">Descripción:</label>
                 {{ form.descripcion }}
             </div>
 
@@ -71,5 +51,10 @@
             {% endfor %}
         </div>
     {% endif %}
+
+{% include 'usuarios/footer.html' %}
+
 </body>
+<script src="{% static 'js/lista_tickets.js' %}"></script>
+<script src="{% static 'js/darkmode.js' %}"></script>
 </html>
