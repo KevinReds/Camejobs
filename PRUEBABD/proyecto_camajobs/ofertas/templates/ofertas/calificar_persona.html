@@ -12,17 +12,30 @@
 </head>
 
 <body>
+
+    {% include 'usuarios/navbar.html' %}
+
     <form method="post" class="formulario">
         <h1>Calificar a {{ persona.nombre_completo }}</h1>
+        <p>Por favor, califica a la persona en base a tu experiencia.</p>
+        <br>
+        <p>Recuerda que la calificación es importante para el desarrollo profesional de la persona.</p>
+        <br>
         {% csrf_token %}
         <div class="form-group">
             {{ form.as_p }}
         </div>
-        <button type="submit" class="btn-enviar">Enviar Calificación</button>
+
+        <div class="button-group">
+            <button type="submit" class="btn-enviar">Enviar Calificación</button>
+            <a href="{% url 'listar_postulaciones' postulacion.oferta.id %}">
+                <button class="btn-volver">Volver a Candidatos</button>
+            </a>
+        </div>
     </form>
-    <a href="{% url 'listar_postulaciones' postulacion.oferta.id %}">
-        <button>Volver a Candidatos</button>
-    </a>
+    
+
+    {% include 'usuarios/footer.html' %}
 
 </body>
 
