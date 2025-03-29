@@ -41,7 +41,7 @@ body {
     min-height: 100vh;
 }
 
-h1 {
+.titulo {
     text-align: center;
     margin-bottom: 30px;
     color: black;
@@ -53,7 +53,9 @@ h1 {
     padding-top: 20px;
 }
 
-select, textarea, input {
+.perfil-container select,
+.perfil-container textarea, 
+.perfil-container input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -62,10 +64,6 @@ select, textarea, input {
     border-radius: 5px;
     font-size: 20px;
     box-sizing: border-box
-}
-
-select {
-    width: 100%;
 }
 
 .boton-guardar {
@@ -92,7 +90,7 @@ select {
 }
 
 
-button[type="submit"], .btn-agregar{
+.inner-btn-guardar, .btn-agregar{
     background-color: var(--color-3);
     color: white;
     border: none;
@@ -103,7 +101,7 @@ button[type="submit"], .btn-agregar{
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover, .btn-agregar:hover {
+.inner-btn-guardar:hover, .btn-agregar:hover {
     background-color: var(--color-2);
 }
 
@@ -126,11 +124,13 @@ button[type="submit"]:hover, .btn-agregar:hover {
         margin: 40px 20px;
     }
 
-    select, textarea, input {
+    .perfil-container select,
+    .perfil-container textarea,
+    .perfil-container input {
         font-size: 18px;
     }
 
-    button[type="submit"] {
+    .inner-btn-guardar {
         padding: 10px 25px;
         font-size: 15px;
     }
@@ -141,7 +141,7 @@ button[type="submit"]:hover, .btn-agregar:hover {
         padding: 20px;
     }
 
-    .botones-agregar {
+    .inner-btn-guardar {
         flex-direction: column;
         align-items: flex-end;
     }
@@ -153,15 +153,15 @@ button[type="submit"]:hover, .btn-agregar:hover {
 }
 
 @media (max-width: 480px) {
-    h1 {
+    .titulo {
         font-size: 24px;
     }
 
-    select, textarea, input {
+    .perfil-container select, .perfil-container textarea, .perfil-container input {
         font-size: 16px;
     }
 
-    button[type="submit"] {
+    .inner-btn-guardar {
         width: 100%;
         font-size: 14px;
     }

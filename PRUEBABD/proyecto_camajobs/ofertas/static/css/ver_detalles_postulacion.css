@@ -3,6 +3,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -10,7 +13,7 @@ body {
     background-color: #ffffff; 
     max-width: 800px;
     width: 90%;
-    margin: 150px auto;
+    margin: 150px auto 0;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
@@ -55,6 +58,7 @@ body {
 footer {
     margin-top: auto;
     width: 100%;
+    position: relative;
 }
 
 @media screen and (max-width: 600px) {

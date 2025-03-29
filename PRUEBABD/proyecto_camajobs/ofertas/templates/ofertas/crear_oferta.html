@@ -19,8 +19,10 @@
         <h1>Crear Oferta Laboral</h1>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Publicar Oferta</button>
-        <a href="#" onclick="confirmarVolver();">Volver</a>
+        <button class="btn-enviar" type="submit">Publicar Oferta</button>
+        <div class="volver-container">
+            <a class="volver" href="#" onclick="confirmarVolver();">Volver</a>
+        </div>
     </form>
     <br>
 </body>

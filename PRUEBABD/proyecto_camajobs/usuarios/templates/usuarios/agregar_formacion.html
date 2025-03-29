@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Agregar Formación - CameJobs</title>
     <style>
-        body {
+body {
             background-color: #f4f4f4;
             display: flex;
             justify-content: center; /* Centra horizontalmente */
@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+        
         .container {
             background-color: white;
             width: 600px; /* Tamaño fijo */
@@ -22,12 +23,15 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
         }
-        h1 {
+
+
+        .titulo {
             text-align: center;
             margin-bottom: 30px;
             color: #333;
             font-size: 28px;
         }
+
         .formulario {
             border: 1px solid #ddd;
             padding: 30px;
@@ -35,16 +39,21 @@
             border-radius: 8px;
             background: #fafafa;
         }
+
         .form-group {
             margin-bottom: 15px;
         }
-        label {
+
+        .container label {
             font-weight: bold;
             color: #555;
             display: block;
             margin-bottom: 5px;
         }
-        select, textarea, input {
+
+        .container select,
+        .container textarea,
+        .container input {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -54,11 +63,13 @@
             font-size: 20px;
             box-sizing: border-box
         }
-        input:focus, textarea:focus, select:focus {
+
+        .container input:focus, .container textarea:focus, .container select:focus {
             border: 2px solid;
             border-color: #0c1e2c;
             outline: none;
         }
+
         .btn-form {
             display: flex;
             flex-direction: column;
@@ -66,7 +77,9 @@
             align-items: center; /* Alinea los botones verticalmente */
             gap: 10px; /* Espaciado uniforme entre botones */
         }
-        button[type="submit"] {
+
+
+        .btn-enviar {
             display: block;
             background-color: #0c1e2c;
             color: white;
@@ -77,9 +90,11 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        button[type="submit"]:hover, .btn-enviar:hover {
+
+        .btn-enviar:hover{
             background-color: #098e68c2;
         }
+
         .btn-enviar {
             background-color: #0c1e2c;
             color: white;
@@ -95,16 +110,17 @@
         .dark-mode .container, .dark-mode .formulario{
             background:#102b3e;
         }
-        .dark-mode label, .dark-mode h1{
+        .dark-mode .container label, .dark-mode .formulario label, .dark-mode .titulo{
             color:#fff;
         }
+        
     </style>
 </head>
 <body>
     {% include 'usuarios/navbar.html' %}
     <div class="container">
         <div class="formulario">
-        <h1>Agregar Formación Académica</h1>
+        <h1 class="titulo">Agregar Formación Académica</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

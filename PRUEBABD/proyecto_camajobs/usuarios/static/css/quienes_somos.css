@@ -9,17 +9,24 @@ body {
 
 body,
 html {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   width: 100%;
 }
 
 .about-us {
-  margin-top: 91px;
+  flex: 1;
+  margin-top: 80px;
   padding: 50px 20px;
   background-color: #f9f9f9;
   text-align: center
 }
+
 
 .about-us-content h1 {
   font-size: 36px;

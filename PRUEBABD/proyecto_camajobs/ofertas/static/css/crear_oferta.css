@@ -102,7 +102,8 @@ form select {
 }
 
 /* Botón con espaciado protegido */
-button[type="submit"] {
+button[type="submit"],
+a.volver {
     background-color: #09BC8A;
     color: white;
     border: none;
@@ -132,18 +133,27 @@ button[type="submit"] {
 a.volver {
     display: inline-block;
     margin: 20px 0;
-    color: #0072a3;
-    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 5px 20px;
     font-size: clamp(15px, 3vw, 16px);
+    border-radius: 8px;
+    cursor: pointer;
     transition: all 0.3s ease;
+    width: calc(100% - 60px);
+    max-width: 120px;
+    margin: 1.2rem 5px 0;
     font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.5px;
+    min-height: 52px;
+    background-color: #09BC8A;
     text-align: center;
+    align-content: center;
+    text-decoration: none;
 }
 
-a.volver:hover {
+a.volver:hover, 
+.btn-enviar:hover {
     color: #09BC8A;
     background-color: rgba(255, 255, 255, 0.9);
     text-decoration: none;

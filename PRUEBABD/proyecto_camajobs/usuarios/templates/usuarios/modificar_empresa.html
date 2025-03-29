@@ -14,17 +14,17 @@
     <br><br><br><br><br>
 
     <div class="perfil-container">
-        <h1>Modificar Empresa</h1>
+        <h1 class="titulo">Modificar Empresa</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <section class="seccion">
-                <h2>Datos de la empresa</h2>
+                <h2 class="titulo-seccion">Datos de la empresa</h2>
                 {{ empresa_form.as_p }}
             </section>
 
             <div class="boton-guardar">
-                <button type="submit">Guardar Cambios</button>
+                <button class="inner-btn-guardar" type="submit">Guardar Cambios</button>
             </div>
         </form>
     
