@@ -92,7 +92,7 @@
           <h6 class="section-title">Contáctanos</h6>
           <ul class="footer-links">
             <li><a href="{% url 'quienes_somos' %}">Quienes somos</a></li>
-            <li><a href="#!">Soporte</a></li>
+            <li><a href="#modal-contacto" class="open-modal">Soporte</a></li>
           </ul>
         </div>
       </div>
@@ -100,7 +100,23 @@
       <div class="footer-below">
         <p>&copy; 2025 Camejobs - Todos los derechos reservados.</p>
       </div>
+
+      <div id="modal-contacto" class="modal">
+        <div class="modal-content">
+            <a href="#contacto" class="cerrar">X</a>
+            <div class="contactar">
+                <h3>Déjanos tu petición a través de:</h3><b>Nuestro Correo Electrónico:</b>
+                <p>camejobs2025@gmail.com</p><br>
+                <b>O para atención directa:</b>
+                <p>comunícate a la línea 1234567890.</p>
+            </div>
+        </div>
+    </div>
+
     </footer>
+
+
+
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
