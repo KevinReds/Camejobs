@@ -1,118 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tus Tickets - CameJobs</title>
-    <style>
-        .ticket-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .ticket-table th, .ticket-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .ticket-table th {
-            background-color: #f4f4f4;
-        }
-        .badge {
-            padding: 5px 10px;
-            border-radius: 12px;
-            font-size: 0.9em;
-        }
-        .badge-abierto { background-color: #4CAF50; color: white; }
-        .badge-enprogreso { background-color: #ff9800; color: white; }
-        .badge-cerrado { background-color: #f44336; color: white; }
-        .btn-detalles {
-            background-color: #2196F3;
-            color: white;
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .messages {
-            margin: 20px 0;
-        }
-        .messages p {
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-        .messages .success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .messages .error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .messages .info {
-            background-color: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Camejobs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/listar_ticket.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 <body>
-    <h1>Tus Tickets</h1>
-    <!-- Mostrar mensajes aquí -->
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
-    
-    <!-- Enlace para crear nuevo ticket -->
-    <a href="{% url 'tickets:crear_ticket' %}">
-        <button>Crear Nuevo Ticket</button>
-    </a>
-    <br>
-    <a href="{% url 'postulaciones' %}">Volver al Inicio</a>
 
-    <table class="ticket-table">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Tipo</th>
-                <th>Estado</th>
-                <th>Fecha</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for ticket in tickets %}
-            <tr>
-                <td>{{ ticket.titulo }}</td>
-                <td>{{ ticket.tipo }}</td>
-                <td>
-                    <span class="badge badge-{{ ticket.estado|lower|cut:' ' }}">
-                        {{ ticket.estado }}
-                    </span>
-                </td>
-                <td>{{ ticket.fecha_creacion|date:"d/m/Y H:i" }}</td>
-                <td>
-                    <a href="{% url 'tickets:editar_ticket' ticket.id %}">
-                        <button class="btn-detalles">Editar</button>
-                    </a>
-                    <a href="{% url 'tickets:eliminar_ticket' ticket.id %}">
-                        <button class="btn-detalles">Eliminar</button>
-                    </a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="5">No tienes tickets registrados.</td>
-            </tr>
+    {% include 'usuarios/navbar.html' %}
+
+    <div class="container-tickets">
+        <h1 class="titulo-principal">Tus Tickets</h1>
+        <!-- Mostrar mensajes aquí -->
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
             {% endfor %}
-        </tbody>
-    </table>
-    
+        </div>
+        {% endif %}
+
+        <!-- Enlace para crear nuevo ticket -->
+        <div class="table-container">
+            <a class="redireccion" href="{% url 'tickets:crear_ticket' %}">
+                <button class="btn-crear-ticket">Crear Nuevo Ticket</button>
+            </a>
+            
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket.titulo }}</td>
+                        <td>{{ ticket.tipo }}</td>
+                        <td>
+                            <span class="badge badge-{{ ticket.estado|lower|cut:' ' }}">
+                                {{ ticket.estado }}
+                            </span>
+                        </td>
+                        <td>{{ ticket.fecha_creacion|date:"d/m/Y H:i" }}</td>
+                        <td>
+                            <a class="redireccion" href="{% url 'tickets:editar_ticket' ticket.id %}">
+                                <button class="btn-acciones">Editar</button>
+                            </a>
+                            <a class="redireccion" href="{% url 'tickets:eliminar_ticket' ticket.id %}">
+                                <button class="btn-acciones">Eliminar</button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">No tienes tickets registrados.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% include 'usuarios/footer.html' %}
+
 </body>
+
+<script src="{% static 'js/darkmode.js' %}"></script>
 </html>

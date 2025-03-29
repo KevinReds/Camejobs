@@ -1,0 +1,390 @@
+/* Estilos generales */
+:root {
+    --background-primary: #0c1e2c;
+    --background-secondary: #0072a3;
+    --text-primary: #fff;
+    --text-secondary: #d6d6d6;
+    --accent-primary: #000;
+    --accent-secondary: #04302384;
+    --accent-tertiary: #000;
+    --card-background: #005e45;
+    --footer-background: #087b5a;
+    --footer-below-background: #005e45;
+    --text-herotitle: #000;
+    --about-color: #005e45c9;
+    --svg-color: #005e45c9;
+    --color-2: #098e68c2;
+    --color-3: #09bc8a;
+    --color-4: #0385bd;
+    --color-5: #102b3e;
+    --navbar-height: 80px;
+    --hover-color: #f5f5f5;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container-tickets {
+    margin: 120px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Contenedor para el botón y la tabla */
+.table-container {
+    margin: 0;
+    position: relative;
+}
+
+/* Título principal */
+.titulo-principal {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Mensajes */
+.messages {
+    margin-bottom: 80px;
+    padding: 10px;
+    background: #e0f7fa;
+    color: #00796b;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Botón de crear ticket */
+.btn-crear-ticket {
+    position: absolute;
+    top: -42px;
+    right: 0;
+    width: 200px;
+    padding: 12px 15px;
+    background: #f5f5f5;
+    color: #333333;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-crear-ticket a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+/* Enlace de volver */
+.redireccion{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redireccion:hover {
+    color: #0056b3;
+}
+
+/* Tabla de tickets */
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px 0px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.ticket-table th, .ticket-table td {
+    max-width: 300px;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.ticket-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+}
+
+
+/* Estados del ticket */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Colores de estado */
+.badge-abierto {
+    background: rgba(0, 128, 0, 0.2);
+    color: #008000;
+}
+
+.badge-en-proceso {
+    background: rgba(255, 165, 0, 0.2);
+    color: #ff9800;
+}
+
+.badge-cerrado {
+    background: rgba(211, 47, 47, 0.2);
+    color: #D32F2F;
+}
+
+/* Botones de acciones */
+.btn-acciones {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-acciones:first-of-type {
+    background: #1565C0;
+    color: white;
+}
+
+.btn-acciones:first-of-type:hover {
+    background: #0D47A1;
+}
+
+.btn-acciones:last-of-type {
+    background: var(--text-primary);
+    color: var(--color-5);
+}
+
+.btn-acciones:last-of-type:hover {
+    background: #0D47A1;
+    color: white;
+}
+
+/* Dark mode */
+
+body.dark-mode{
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    background-image: none;
+}
+
+.dark-mode .container-tickets{
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: 1px solid #ddd;
+}
+
+.dark-mode .titulo-principal{
+    color: var(--text-primary);
+}
+
+.dark-mode .ticket-table{
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: 1px solid #ddd;
+}
+
+.dark-mode .ticket-table th {
+    background-color: var(--color-5);
+    color: var(--text-primary);
+}
+
+.dark-mode .btn-crear-ticket {
+    background: var(--color-5);
+    color: var(--text-primary);
+    border: 1px solid #001c2e;
+}
+
+.dark-mode .btn-acciones:first-of-type {
+    background: var(--background-primary);
+    color: var(--text-primary);
+}
+
+.dark-mode .btn-acciones:first-of-type:hover {
+    background: var(--color-3);
+    color: var(--text-primary)
+}
+
+.dark-mode .btn-acciones:last-of-type {
+    background: var(--background-primary);
+    color: var(--text-primary);
+}
+
+.dark-mode .btn-acciones:last-of-type:hover {
+    background: var(--color-3);
+    color: var(--text-primary)
+}
+
+.dark-mode .messages{
+    background-color: var(--card-background);
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+
+/* Pantallas grandes (1800px en adelante) */
+@media (min-width: 1800px) {
+    .container-tickets {
+        width: 80%;
+    }
+    .btn-crear-ticket {
+        font-size: 18px;
+        width: 220px;
+    }
+    .ticket-table th, .ticket-table td {
+        font-size: 18px;
+        padding: 18px;
+    }
+}
+
+/* Escritorio estándar (1024px - 1799px) */
+@media (min-width: 1024px) and (max-width: 1799px) {
+    .container-tickets {
+        width: 90%;
+    }
+    .btn-crear-ticket {
+        font-size: 16px;
+        width: 200px;
+    }
+    .ticket-table th, .ticket-table td {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+/* Responsive para pantallas menores a 1024px */
+@media (max-width: 1024px) {
+    /* Contenedor principal con scroll horizontal */
+    .table-container {
+        overflow-x: auto;
+        position: relative;
+        width: 100%;
+    }
+    
+    /* Mantener la estructura de tabla original */
+    .ticket-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    
+    /* Fijar las cabeceras (títulos) a la izquierda */
+    .ticket-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+        width: 100px; /* Ancho fijo para todos los títulos */
+        min-width: 100px;
+        max-width: 100px;
+    }
+    
+    /* Estilos para cada tipo de cabecera fija */
+    .ticket-table tr:nth-child(1) th:first-child { /* TÍTULO */
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+    }
+    
+    .ticket-table tr:nth-child(2) th:first-child { /* TIPO */
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+    }
+    
+    .ticket-table tr:nth-child(3) th:first-child { /* ESTADO */
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+    }
+    
+    .ticket-table tr:nth-child(4) th:first-child { /* FECHA */
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+    }
+    
+    .ticket-table tr:nth-child(5) th:first-child { /* ACCIONES */
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+    }
+    
+    /* Ajustar el ancho de las celdas para el scroll horizontal */
+    .ticket-table td {
+        min-width: 150px;
+        width: 150px;
+        max-width: 150px;
+        white-space: normal; /* Permite que el texto se divida en varias líneas */
+        overflow: visible; /* Asegura que el texto sea completamente visible */
+        word-wrap: break-word; /* Fuerza el salto de línea si es necesario */
+    }
+    
+    /* Eliminar las restricciones de ancho anteriores */
+    .ticket-table th:not(:first-child) {
+        min-width: 150px;
+        width: 150px;
+        max-width: 150px;
+        white-space: nowrap;
+    }
+
+    /* Asegurar que el botón de crear ticket quede bien posicionado */
+    .btn-crear-ticket {
+        position:sticky;
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: var(--color-5);
+        color: var(--text-primary);
+        text-align: center;
+        font-weight: bold;
+        border-radius: 5px;
+        margin: 0;
+        visibility: visible;
+        opacity: 1;
+        right: auto; /* Se queda pegado en la parte superior */
+        left: 50%; /* Evita que se mueva a la izquierda */
+        width: 100%; /* Ocupará el ancho disponible */
+        transform: translateX(-50%);
+        bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1000; /* Asegurar que esté por encima de la tabla */
+    }
+}
