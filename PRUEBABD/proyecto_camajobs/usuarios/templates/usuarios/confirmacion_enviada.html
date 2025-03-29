@@ -1,17 +1,25 @@
-<!-- usuarios/templates/usuarios/confirmacion_enviada.html -->
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmación Enviada</title>
+    <link rel="stylesheet" href="{% static 'css/confirmacion_enviada.css' %}">
+    <link rel="icon" href="{% static 'img/Logo camejobs.png' %}">
 </head>
 <body>
-    <h1>¡Registro exitoso!</h1>
-    <p>Hemos enviado un correo electrónico con un enlace para activar tu cuenta.</p>
-    <p>Revisa tu bandeja de entrada (y la carpeta de spam).</p>
 
-     <!--  Botón para volver al login -->
-    <a href="{% url 'login' %}">
-        <button>Volver al Inicio de Sesión</button>
-    </a>
+    <div class="confirmacion-container">
+        <img src="{% static 'img/logo.jpg' %}" alt="Logo de CameJobs" class="logo">
+        <h1>¡Registro exitoso!</h1>
+        <p>Hemos enviado un correo electrónico con un enlace para activar tu cuenta.</p>
+        <p>Revisa tu bandeja de entrada (y la carpeta de spam).</p>
+
+        <!--  Botón para volver al login -->
+        <a href="{% url 'login' %}">
+            <button>Volver al Inicio de Sesión</button>
+        </a>
+    </div>
 </body>
 </html>
