@@ -15,7 +15,7 @@
   --color-2: #098e68c2;
   --color-3: #09bc8a;
   --color-4: #0385bd;
-  --color-5: #102b3e;
+  --color-5: #102b3e
 }
 
 body {
@@ -63,14 +63,14 @@ html {
 }
 
 .hero h1 {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 37px;
   font-weight: 700;
   color: #fff
 }
 
 .hero p {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: #fff;
   margin-top: 10px
@@ -124,14 +124,14 @@ html {
 }
 
 .card h2 {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #fff
 }
 
 .card p {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   margin-top: 10px;
   color: #fff
@@ -148,7 +148,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10%
+  padding: 5%
 }
 
 .about-content {
@@ -172,14 +172,14 @@ html {
 }
 
 .about h2 {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #fff
 }
 
 .about p {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   margin-top: 10px;
   line-height: 1.6;
@@ -207,7 +207,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
 }
 
 .contact img {
@@ -222,14 +222,14 @@ html {
 }
 
 .contact h2 {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #000
 }
 
 .contact p {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   margin-top: 10px;
   line-height: 1.8;
@@ -417,6 +417,49 @@ fill: var(--text-primary);
   color: var(--text-primary);
 }
 
+@media (max-width: 500px) {
+  .overlay {
+      background: rgba(0, 0, 0, .6);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+  }
+
+  .hero-content h1 {
+      font-size: 25px; /* Reducido */
+  }
+
+  .about-content h2 {
+      font-size: 18px; /* Reducido */
+  }
+
+  .about-content p {
+      font-size: 13px; /* Reducido */
+      line-height: 1.3;
+  }
+
+  .about button {
+      font-size: 12px; /* Reducido */
+      padding: 6px 12px; /* Ajustado */
+  }
+
+  .about-content {
+      padding: 10px;
+      width: 90%;
+  }
+
+  .about img {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .card {
+      width: 95%;
+  }
+}
+
 @media (max-width:768px) {
   .cards-container {
       flex-direction: column;
@@ -498,7 +541,6 @@ fill: var(--text-primary);
   }
 
   .about button {
-      display: block;
       margin: 15px auto 0;
       font-size: 14px;
       padding: 8px 16px
@@ -536,7 +578,6 @@ fill: var(--text-primary);
       display: inline
   }
 }
-
 .modal {
   display: none;
   position: fixed;
