@@ -151,8 +151,16 @@ def postulaciones(request):
 
 # Perfil de persona
 @login_required
-def perfil_persona(request, persona_id):
-    persona = get_object_or_404(Persona, id=persona_id)
+def perfil_persona(request, persona_id=None):
+    if persona_id is None:
+        try:
+            persona = Persona.objects.get(usuario=request.user)
+        except Persona.DoesNotExist:
+            messages.error(request, "No tienes un perfil registrado.")
+            return redirect('nombre_de_la_vista_a_redirigir')  # Redirige a otra vista segura
+    else:
+        persona = get_object_or_404(Persona, id=persona_id)
+        
     formaciones = FormacionAcademica.objects.filter(persona=persona)
     experiencias = ExperienciaLaboral.objects.filter(persona=persona)
     tickets = Ticket.objects.filter(usuario=request.user)
@@ -175,16 +183,20 @@ def perfil_persona(request, persona_id):
 @login_required
 def modificar_perfil(request):
     persona = request.user.persona
+    formaciones = FormacionAcademica.objects.filter(persona=persona)
+    experiencias = ExperienciaLaboral.objects.filter(persona=persona)
     if request.method == 'POST':
         persona_form = PersonaForm(request.POST, request.FILES, instance=persona)
         if persona_form.is_valid():
             persona_form.save()
             messages.success(request, "Perfil actualizado correctamente.")
-            return redirect('perfil_persona')
+            return redirect('usuarios/perfil/persona', persona_id=persona.id)
     else:
         persona_form = PersonaForm(instance=persona)
     return render(request, 'usuarios/modificar_perfil.html', {
         'persona_form': persona_form,
+        'formaciones': formaciones,
+        'experiencias': experiencias,
     })
 
 # Perfil de empresa

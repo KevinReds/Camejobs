@@ -28,6 +28,7 @@ urlpatterns = [
 
     # Rutas de perfil
     path('perfil/persona/', views.perfil_persona, name='perfil_persona'),
+    path('perfil/persona/<int:persona_id>/', views.perfil_persona, name='perfil_persona'),
     path('perfil/empresa/', views.perfil_empresa, name='perfil_empresa'),
     path('perfil/empresa/<int:empresa_id>/', views.perfil_empresa, name='perfil_empresa'),
 

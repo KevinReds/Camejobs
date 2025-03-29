@@ -20,7 +20,7 @@
 
             <section class="seccion">
                 <h2 class="titulo-seccion">Datos Personales</h2>
-                {{ persona_form.as_p }}
+                {{ persona_form.as_p }} 
             </section>
 
             <div class="boton-guardar">
@@ -31,9 +31,41 @@
         <br>
 
         <div class="botones-agregar">
-            <a href="{% url 'agregar_experiencia' %}" class="btn-agregar">Agregar Experiencia</a>
-            <a href="{% url 'agregar_formacion' %}" class="btn-agregar">Agregar Formación</a>
+        <h2>Formación Académica</h2>
+        <a href="{% url 'agregar_formacion' %}" class="btn-agregar">Agregar Formación</a>
         </div>
+        <ul>
+                {% for formacion in formaciones %}
+                <li>
+                    {{ formacion.titulo_obtenido }} - {{ formacion.institucion }}
+                    <a href="{% url 'editar_formacion' formacion.id %}">
+                        <button>Editar</button>
+                    </a>
+                    <a href="{% url 'eliminar_formacion' formacion.id %}">
+                        <button>Eliminar</button>
+                    </a>
+                </li>
+                {% endfor %}
+        </ul>
+    
+        <div class="botones-agregar">
+        <h2>Experiencia Laboral</h2>
+        <a href="{% url 'agregar_experiencia' %}" class="btn-agregar">Agregar Experiencia</a>
+        </div>
+        <ul>
+            {% for experiencia in experiencias %}
+            <li>
+                {{ experiencia.cargo }} en {{ experiencia.nombre_empresa }}
+                <a href="{% url 'editar_experiencia' experiencia.id %}">
+                    <button>Editar</button>
+                </a>
+                <a href="{% url 'eliminar_experiencia' experiencia.id %}">
+                    <button>Eliminar</button>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        
     
     </div>
 
