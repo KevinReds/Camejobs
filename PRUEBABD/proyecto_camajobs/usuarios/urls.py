@@ -1,9 +1,10 @@
-from django.urls import path
-from . import views
-from django.contrib.auth import views as auth_views
-#Cambiar contraseña y validar
-from .forms import CustomAuthenticationForm
-from .views import redirigir_perfil, perfil_persona, perfil_empresa
+# Importación de módulos necesarios de Django
+from django.urls import path # Para definir rutas URL
+from . import views # Importa todas las vistas del módulo actual
+from django.contrib.auth import views as auth_views # Vistas de autenticación predefinidas de Django
+# Importación de formularios y vistas personalizadas
+from .forms import CustomAuthenticationForm # Formulario personalizado de login
+from .views import redirigir_perfil, perfil_persona, perfil_empresa # Vistas específicas de perfil
 
 urlpatterns = [
     # Página principal
