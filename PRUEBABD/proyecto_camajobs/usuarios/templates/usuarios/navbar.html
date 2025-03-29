@@ -39,9 +39,9 @@
                 {% if user.is_authenticated %}
                     <div class="profile-menu">
                         <div class="profile" id="profile-icon">
-                            {% if request.user.persona and persona.foto_perfil %}
+                            {% if request.user.persona and request.user.persona.foto_perfil and request.user.persona.foto_perfil.url %}
                                 <img src="{{ request.user.persona.foto_perfil.url }}" alt="Foto de {{ request.user.persona.nombre_completo }}">
-                            {% elif request.user.empresa and empresa.logo %}
+                            {% elif request.user.empresa and request.user.empresa.logo and request.user.empresa.logo.url %}
                                 <img src="{{ request.user.empresa.logo.url }}" alt="Logo de {{ request.user.empresa.razon_social }}">
                             {% else %}
                                 <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto predeterminada">

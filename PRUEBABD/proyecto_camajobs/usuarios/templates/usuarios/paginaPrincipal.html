@@ -17,10 +17,12 @@
             <div class="hero-content">
                 <h1>Conecta con tu próximo reto profesional</h1>
                 <p>Explora, postula y recibe ofertas personalizadas en el campo laboral que deseas.</p>
-                <div class="botones">
-                    <a href="{% url 'login' %}"><button>Inicia sesión</button></a>
-                    <a href="{% url 'inicio' %}"><button>Regístrate</button></a>
-                </div>  
+                {% if not user.is_authenticated%}
+                    <div class="botones">
+                        <a href="{% url 'login' %}"><button>Inicia sesión</button></a>
+                        <a href="{% url 'inicio' %}"><button>Regístrate</button></a>
+                    </div>  
+                {% endif %}
             </div>
         </div>
     </header>
