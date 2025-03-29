@@ -11,6 +11,8 @@
 
 <body>
 
+    {% include 'usuarios/navbar.html' %}
+<div class="ver-detalles-postulacion">    
     <h1>Detalles de la Postulación</h1>
     <div class="detalles">
         <h3>{{ postulacion.oferta.titulo }}</h3>
@@ -26,6 +28,9 @@
     <a href="{% url 'postulaciones' %}">
         <button>Volver a Inicio</button>
     </a>
-    
+</div>
+    {% include 'usuarios/footer.html' %}
+
+
 </body>
 </html>

@@ -1,14 +1,65 @@
-.detalles {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+body {
+    background-image: url('../img/detalles-postulacion.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.btn-calificar {
-    background-color: #4CAF50;
-    color: white;
+
+
+.ver-detalles-postulacion {
+    background-color: #ffffff; 
+    max-width: 800px;
+    width: 90%;
+    margin: 150px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.detalles {
+    text-align: left;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.409);
+}
+
+
+
+.ver-detalles-postulacion button {
+    margin: 10px;
     padding: 10px 20px;
+    color: white;
     border: none;
-    border-radius: 4px;
+    background-color: #087b5a;
     cursor: pointer;
+    border-radius: 5px
+
+}
+
+
+.dark-mode .ver-detalles-postulacion {
+    background-color: #0c1e2c;
+    color: #ffffff;
+} 
+
+.dark-mode .detalles {
+    background-color: #102b3e;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .ver-detalles-postulacion {
+        width: 85%;
+    }
+
 }
