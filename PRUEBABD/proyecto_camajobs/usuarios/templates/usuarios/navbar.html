@@ -44,7 +44,7 @@
                             {% elif request.user.empresa and empresa.logo %}
                                 <img src="{{ request.user.empresa.logo.url }}" alt="Logo de {{ request.user.empresa.razon_social }}">
                             {% else %}
-                                <a style="text-decoration: none; color: #fff;" href="{% url 'login' %}" class="login-button">Iniciar Sesión</a>
+                                <img src="{% static 'img/default_profile_nav.png' %}" alt="Foto predeterminada">
                             {% endif %}
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu">
