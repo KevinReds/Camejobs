@@ -52,12 +52,9 @@
                 {% for formacion in formaciones %}
                 <li>
                     {{ formacion.titulo_obtenido }} - {{ formacion.institucion }}
-                    <a href="{% url 'editar_formacion' formacion.id %}">
-                        <button>Editar</button>
-                    </a>
-                    <a href="{% url 'eliminar_formacion' formacion.id %}">
-                        <button>Eliminar</button>
-                    </a>
+                    <a href="{% url 'editar_formacion' formacion.id %}" class="btn-agregar">Editar</a>
+
+                    <a href="{% url 'eliminar_formacion' formacion.id %}" class="btn-agregar">Eliminar</a>
                 </li>
                 {% endfor %}
         </ul>
@@ -70,12 +67,8 @@
             {% for experiencia in experiencias %}
             <li>
                 {{ experiencia.cargo }} en {{ experiencia.nombre_empresa }}
-                <a href="{% url 'editar_experiencia' experiencia.id %}">
-                    <button>Editar</button>
-                </a>
-                <a href="{% url 'eliminar_experiencia' experiencia.id %}">
-                    <button>Eliminar</button>
-                </a>
+                <a href="{% url 'editar_experiencia' experiencia.id %}" class="btn-agregar">Editar</a>
+                <a href="{% url 'eliminar_experiencia' experiencia.id %}" class="btn-agregar">Eliminar</a>
             </li>
             {% endfor %}
         </ul>

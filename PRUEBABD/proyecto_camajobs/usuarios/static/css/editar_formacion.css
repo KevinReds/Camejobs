@@ -1,4 +1,4 @@
-/* Estilos generales */ 
+/* Estilos generales */
 :root {
     --background-primary: #0c1e2c;
     --background-secondary: #0072a3;
@@ -90,6 +90,7 @@ body {
     box-sizing: border-box;
     background: #fff;
     color: var(--accent-primary);
+    margin-bottom: 15px;
 }
 
 .form-group textarea {

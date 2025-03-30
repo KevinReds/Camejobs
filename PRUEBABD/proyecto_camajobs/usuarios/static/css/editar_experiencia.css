@@ -1,4 +1,4 @@
-/* Estilos generales */ 
+/* Estilos generales */
 :root {
     --background-primary: #0c1e2c;
     --background-secondary: #0072a3;
@@ -34,6 +34,15 @@ body {
     min-height: 100vh;
 }
 
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding-top: var(--navbar-height);
+}
+
 /* Título */
 .title {
     padding-top: var(--navbar-height);
@@ -59,6 +68,7 @@ body {
 /* Estilos de los grupos de formulario */
 .form-group {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 /* Etiquetas */
@@ -83,6 +93,7 @@ body {
     box-sizing: border-box;
     background: #fff;
     color: var(--accent-primary);
+    margin-bottom: 15px;
 }
 
 .form-group textarea {
